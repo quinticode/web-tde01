@@ -1,0 +1,28 @@
+Na primeira parte existem dois campos de input e um select em que toda vez que o usuário digita um caractere ou altera a seleção,
+um evento é ativado, que chama uma arrow function.
+Essa primeira arrow function verifica se os caracteres que estão dentro do input é um número.
+Se sim, chama a função atualizarCalculo(). Se não, muda o que está dentro do input para ""(string vazia).
+
+A função atualizarCalculo() funciona da seguinte maneira:
+Optei por fazer um "mapa" das diferentes operações: "soma": soma, "subtracao": subtracao, (...) isso para utilizar depois na função com callback.
+Eu defino o num1 como o valor que está dentro do input-1, e num2 como o valor que está no input-2
+Então eu defino o resultado (res) como retornaResOperacao(num1,num2, operacoesMapa[operacao.value])
+Isso passa os dois valores que estão nos inputs (num1 e num2) e o valor que está no select(soma, subtracao, multiplicacao, divisao) como parâmetros dessa função.
+A funcao vai retornar para res o devido valor, já que o callback vai substituir e realizar a operação adequada àquela situação.
+Há outra condicional, que verifica se o resultado não é um número válido. Se for NaN, ele atualiza o parágrafo para "RESULTADO: --". Se não, ele põe o resultado.
+Faço essa verificação para não aparecer "NaN" como resultado em alguns casos.
+
+///////
+
+Agora na segunda parte de calcular a média:
+Existe um input, para digitar qual número quer adicionar; Um botão para adicionar o número, um botão para resetar todos os números e a lista;
+Uma lista, para controlar e fazer a média facilmente; E o resultado da média da lista.
+
+Ao usuario clicar no botão de "ADICIONAR À LISTA", ele ativa um evento que chama um função anônima.
+Essa função verifica se o valor que está dentro do input é um número, e não é um string vazia. Se sim:
+O valor que está no input é adicionado na lista; 
+O texto da lista é atualizado para mostrar os números que estão sendo utilizados para calcular a média;
+E mostra a média calculada dessa lista, por meio da função calcularMedia(lista), que percorre a lista e divide a soma total dos seus numeros pelo tamanho dela.
+Por último, define o texto do input para "", pelo feedback do usuário.
+
+Ao usuário clicar no botão de "RESETAR", ele define todos os campos de média nos seus valores padrões, e também define a lista como vazia.
