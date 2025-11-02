@@ -1,0 +1,19 @@
+body {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0px;
+    padding: 0px;
+    gap: 25px;
+}
+
+#botao {
+    width: 50%;
+    height: 150px;
+    border-radius: 30px;
+}
+
+#botao:hover {
+    cursor: pointer;
+}
