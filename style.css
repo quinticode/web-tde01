@@ -25,6 +25,7 @@ body {
     text-align: center;
     align-items: center;
 }
+
 input {
     font-size: 50px;
     font-family: "Comic Neue";
@@ -32,6 +33,19 @@ input {
     border-radius: 10px;
     width: 10rem;
     height: 5rem;
+}
+
+*:first-of-type .secao input {
+    background-color: rgba(109, 172, 199, 0.534);
+}
+
+*:last-of-type input {
+    background-color: rgb(185, 189, 126);
+}
+
+.linha ~ label {
+    font-size: 30px;
+    font-weight: 400;
 }
 select {
     font-family: "Comic Neue";
@@ -48,8 +62,27 @@ option {
 select:hover{
     cursor: pointer;
 }
+button{
+    font-family: "Comic Neue";
+    height: 3rem;
+    font-weight: 500;
+    border-radius: 10px;
+    border-color: rgb(0, 0, 0);
+}
 
-#resultado {
+button:hover{
+    cursor: pointer;
+}
+
+#btn-add{
+    background-color: rgb(134, 201, 134);
+}
+
+#btn-reset{
+    background-color: rgb(189, 118, 132);
+}
+
+.resultado {
     font-size: 30px;
     font-weight: 900;
 }
@@ -57,6 +90,6 @@ select:hover{
 .linha {
   width: 50%;
   height: 1px;
-  margin: 20px 0;      
+  margin: 20px;      
   border-bottom: 5px dashed #77777794;
 }

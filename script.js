@@ -33,24 +33,6 @@ function divisao(a,b) {
     return a / b;
 }
 
-function filtrarPares(lista) {
-    let pares = [];
-    lista.forEach(numero => {
-        if (numero % 2 == 0) {
-            pares.push(numero);
-        }
-    }
-);
-    return pares;
-}
-
-function calcularMedia(lista) {
-    let soma = 0;
-    lista.forEach(numero => {soma += numero});
-
-    return soma / lista.length;
-}
-
 const input1 = document.getElementById("input-1");
 const input2 = document.getElementById("input-2");
 const operacao = document.getElementById("operacao");
@@ -98,13 +80,21 @@ function atualizarCalculo() {
     } else {
         resultado.innerText = "RESULTADO: " + res;
     }
+    console.log(res)
 }
 
 function retornaResOperacao(num1, num2, operacao) {
     return operacao(num1,num2);
 }
 
-////////////////
+//////////////// CALCULAR MÉDIA
+
+function calcularMedia(lista) {
+    let soma = 0;
+    lista.forEach(numero => {soma += numero});
+
+    return soma / lista.length;
+}
 
 const inputMedia = document.getElementById("input-media");
 const btnAdd = document.getElementById("btn-add");
@@ -116,14 +106,18 @@ let listaMedia = [];
 btnAdd.addEventListener('click', function(){
 
     if(!isNaN(inputMedia.value) && !(inputMedia.value == "")) {
-    listaMedia.push(parseFloat(inputMedia.value));
+    listaMedia.push(parseFloat(inputMedia.value));  // adiciona o valor do botao na lista
+    pLista.innerText = "Números: " + listaMedia; // mostra a lista
+    mediaRes.innerText = "MÉDIA: " + parseFloat(calcularMedia(listaMedia).toFixed(4));
     }
     console.log(listaMedia);
     inputMedia.value = "";
-    pLista.innerText = "Números: " + listaMedia;
-    
-    mediaRes.innerText = "MÉDIA: " + parseFloat(calcularMedia(listaMedia));
 })
 
-console.log(calcularMedia([1,2,3,10,10,10]))
-console.log(filtrarPares([1,2,3,10]))
+btnReset.addEventListener('click', function(){
+    inputMedia.value = "";
+    listaMedia = [];
+    mediaRes.innerText = "MÉDIA: -- " ;
+    pLista.innerText = "";
+
+})
