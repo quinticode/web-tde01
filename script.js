@@ -58,20 +58,20 @@ const resultado = document.getElementById("resultado");
 
 input1.addEventListener('keyup', () => {
     
-        if (!isNaN(input1.value)) { // se input1.value é um numero, atualiza 
-            atualizarCalculo();
-        } else {
-            input1.value = "";
-        }   
+    if (!isNaN(input1.value)) { // se input1.value é um numero, atualiza 
+        atualizarCalculo();
+    } else {
+        input1.value = "";
+    }   
 })
 
 input2.addEventListener('keyup', () => {
     
-        if (!isNaN(input2.value)) {
-            atualizarCalculo();
-        } else {
-            input2.value = "";
-        }
+    if (!isNaN(input2.value)) {
+        atualizarCalculo();
+    } else {
+        input2.value = "";
+    }
 })
 
 operacao.addEventListener('change', () => {
@@ -104,24 +104,26 @@ function retornaResOperacao(num1, num2, operacao) {
     return operacao(num1,num2);
 }
 
-const botao = document.getElementById("botao")
+////////////////
 
-let qtdPontos = 0;
-let valorPonto = 10;
+const inputMedia = document.getElementById("input-media");
+const btnAdd = document.getElementById("btn-add");
+const btnReset = document.getElementById("btn-reset");
+const pLista = document.getElementById("lista");
+const mediaRes = document.getElementById("media-resultado");
+let listaMedia = [];
 
-botao.addEventListener('click', () => {
-    somarPontos();
-    atualizarCalculoPontos();
+btnAdd.addEventListener('click', function(){
+
+    if(!isNaN(inputMedia.value) && !(inputMedia.value == "")) {
+    listaMedia.push(parseFloat(inputMedia.value));
+    }
+    console.log(listaMedia);
+    inputMedia.value = "";
+    pLista.innerText = "Números: " + listaMedia;
+    
+    mediaRes.innerText = "MÉDIA: " + parseFloat(calcularMedia(listaMedia));
 })
-
-
-function somarPontos() {
-    qtdPontos += valorPonto;
-}
-
-function atualizarCalculoPontos() {
-    pontuacao.innerText = "Pontuação: " + qtdPontos;
-}
 
 console.log(calcularMedia([1,2,3,10,10,10]))
 console.log(filtrarPares([1,2,3,10]))

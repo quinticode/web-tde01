@@ -8,26 +8,40 @@
     <script src="script.js" defer></script>
 </head>
 <body>
+
     <h1>BEM-VINDO AO SITE MUITO MALUCO!!!</h1>
-    <p id="pontuacao">PONTOS: 0</p>
-
-    <button id="botao">GANHAR PONTOS</button>
-
-    <label for="input-1">DIGITE O PRIMEIRO NUMERO</label>
-    <input type="text" id="input-1">
-
-    <label for="operacao">ESCOLHA A OPERAÇÃO</label>
-    <select name="Operação" id="operacao">
-        <option value="soma">+</option>
-        <option value="subtracao">-</option>
-        <option value="multiplicacao">*</option>
-        <option value="divisao">/</option>
-    </select>
     
-    <label for="input-2">DIGITE O SEGUNDO NUMERO</label>
-    <input type="text" id="input-2">
+    <div class="secao">
+        <div class="subsecao">
+            <label for="input-1">DIGITE O PRIMEIRO NUMERO</label>
+            <input type="text" id="input-1">
+        </div>
 
+        <div class="subsecao">
+            <label for="operacao">ESCOLHA A OPERAÇÃO</label>
+            <select name="Operação" id="operacao">
+                <option value="soma">+</option>
+                <option value="subtracao">-</option>
+                <option value="multiplicacao">*</option>
+                <option value="divisao">/</option>
+            </select>
+        </div class="subsecao">
+    
+        <div class="subsecao">
+        <label for="input-2">DIGITE O SEGUNDO NUMERO</label>
+        <input type="text" id="input-2">
+        </div>
+    </div>
     <p id="resultado">RESULTADO: --</p>
+
+    <div class="linha"></div>
+    <label for="input-media">DIGITE OS NUMEROS PARA CALCULAR A MÉDIA</label>
+    <input type="text" id="input-media">
     
+    <p id="lista"></p>
+    <button id="btn-add">ADICIONAR À LISTA</button>
+    <button id="btn-reset">RESETAR</button>
+    
+    <p id="media-resultado">MÉDIA: </p>
 </body>
 </html>

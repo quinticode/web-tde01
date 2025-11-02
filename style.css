@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
 body {
+    font-family: "Comic Neue";
     display: flex;
     align-content: center;
     align-items: center;
@@ -8,12 +11,52 @@ body {
     gap: 25px;
 }
 
-#botao {
-    width: 50%;
-    height: 150px;
-    border-radius: 30px;
+.secao {
+    max-width: 60%;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
 }
 
-#botao:hover {
+.subsecao {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    align-items: center;
+}
+input {
+    font-size: 50px;
+    font-family: "Comic Neue";
+    text-align: center;
+    border-radius: 10px;
+    width: 10rem;
+    height: 5rem;
+}
+select {
+    font-family: "Comic Neue";
+    font-size: 50px;
+    text-align: center;
+    border-radius: 5px;
+}
+option {
+    font-family: "Comic Neue";
+    text-align: center;
+    border-radius: 25px;
+
+}
+select:hover{
     cursor: pointer;
+}
+
+#resultado {
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.linha {
+  width: 50%;
+  height: 1px;
+  margin: 20px 0;      
+  border-bottom: 5px dashed #77777794;
 }
